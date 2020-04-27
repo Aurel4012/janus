@@ -26,12 +26,11 @@
 
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'janus' ); ?></a>
 
 	<header id="masthead" class="site-header">
 
 
-		 <div class="container-fluid">
+		 <div class="container-fluid px-0">
 
 		     <?php header_custom() ?>
 		 </div>

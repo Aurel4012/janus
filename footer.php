@@ -15,17 +15,14 @@
 
 	<footer id="colophon" class="site-footer mx-2">
 		<div class="site-info container-fluid my-2 p-2  rgba-white-strong rounded z-depth-1">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'janus' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'janus' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'janus' ), 'janus', '<a href="https://www.digitalstrategie.fr">Digital Stratégie</a>' );
-				?>
+			
+			  <?php
+			  /* translators: 1: Theme name, 2: Theme author. */
+			  printf( esc_html__( 'Theme: %1$s par %2$s.', 'janus' ), 'janus', '<a href="https://www.digitalstrategie.fr">Digital Stratégie</a>' );
+			  ?>
+		
+		
+
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

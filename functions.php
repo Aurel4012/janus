@@ -242,45 +242,47 @@ function header_custom(){
     
     <!-- ajout menu top digitalstrategie --> 
   
-    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top visible-xs d-sm-visible d-md-none d-lg-none d-xl-none <?php echo $style_top; ?>" role="navigation">
-      <div class="container-fluid">
-       <!-- Brand and toggle get grouped for better mobile display -->
-       <div class="pt-2"><?php the_custom_logo(); ?></div> 
-       
-        <!-- Brand and toggle get grouped for better mobile display -->
+    <nav class="navbar navbar-expand-lg container-fluid navbar-light bg-white d-md-none d-lg-none d-xl-none">
     
-        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-            <?php
-            wp_nav_menu( array(
-                'theme_location'    => 'top_menu_mobile',
-                'depth'             => 2,
-                'container'         => 'div',
-                'container_class'   => 'navbar-expand-sm  top_menu_mobile',
-                'container_id'      => 'bs-example-navbar-collapse-mobile',
-                'menu_class'        => 'nav navbar-nav mx-auto',
-                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                'walker'            => new WP_Bootstrap_Navwalker(),
-            ) );
-            ?>
-            <?php if (is_user_logged_in()){ ?>
-            
-                      <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user pull-right px-0 pt-3" data-toggle="dropdown" href="#" role="button"
-                         aria-haspopup="false" aria-expanded="false">
-                          <i class="fa fa-user-circle fa-2x user-button"></i>
-                      </a>
-                      <div class="dropdown-menu dropdown-menu-right profile-dropdown">
-                          <a class="dropdown-item py-0" href="<?php echo get_home_url().'/admin-client/see-profil.php';?>"> <i class="fa fa-user-circle" style="padding-left:2px;"></i> <?php _e( 'Mon profil client', 'janus' ); ?></a>
-                          <div class="dropdown-divider my-4"></div>
-                          <a class="dropdown-item py-0" href="<?php echo get_home_url().'/securitylog/?action=logout';?>"> <i class="fa fa-user-times" style="padding-left:2px;"></i> <?php _e( 'Déconnexion', 'janus' ); ?></a>
-                      </div>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    	  <span class="navbar-toggler-icon"></span>
+    	</button>
 
-            <?php }else{
-            ?>
+      <div class="ml-auto"><?php the_custom_logo(); ?></div>
+      <div class="ml-auto"><a href="tel:0670937002"><i class="fa fa-phone fa-2x fa-flip-horizontal"></i></a></div>
+           <?php if (is_user_logged_in()){ ?>
+           		<div>
+                     <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="false" aria-expanded="false">
+                         <i class="fa fa-user-circle fa-2x user-button"></i>
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right profile-dropdown my-0 ml-3">
+                         <a class="dropdown-item py-0" href="<?php echo get_home_url().'/admin-client/see-profil.php';?>"> <i class="fa fa-user-circle" style="padding-left:2px;"></i> <?php _e( 'Mon profil client', 'janus' ); ?></a>
+                         <div class="dropdown-divider my-4"></div>
+                         <a class="dropdown-item py-0" href="<?php echo get_home_url().'/securitylog/?action=logout';?>"> <i class="fa fa-user-times" style="padding-left:2px;"></i> <?php _e( 'Déconnexion', 'janus' ); ?></a>
+                     </div>
+                </div>
+           <?php }else{
+           ?>
 
-            
-            <a href="<?php echo home_url('/admin-client/login.php');?>" class="connectButton"><?php _e( 'Connexion', 'janus' ); ?></a> 
-            <?php } ?>
-       </div>
+          <div class="ml-3">
+           <a href="<?php echo home_url('/admin-client/login.php');?>"><i class="fa fa-user-plus fa-2x"></i></a> 
+          </div>
+           <?php } ?>
+    
+      <?php
+      wp_nav_menu( array(
+          'theme_location'    => 'top_menu_mobile',
+          'depth'             => 2,
+          'container'         => 'div',
+          'container_class'   => 'collapse navbar-collapse',
+          'container_id'      => 'navbarSupportedContent',
+          'menu_class'        => 'navbar-nav mr-auto',
+          'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+          'walker'            => new WP_Bootstrap_Navwalker(),
+      ) );
+      ?>
+      
     </nav>
     
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top py-1 d-none d-sm-none d-md-block d-lg-block d-xl-block <?php echo $style_top; ?>" role="navigation">
@@ -332,7 +334,7 @@ function header_custom(){
     </nav>
     <div class="white_space"></div>
     
-    <nav class="navbar navbar-expand-md white px-0 py-1  z-depth-1 fixed-top nav_menu" <?php echo $spacing; ?> role="navigation">
+    <nav class="navbar navbar-expand-md white px-0 py-1  z-depth-1 fixed-top  d-none d-sm-none  d-md-block d-lg-block d-xl-block nav_menu" <?php echo $spacing; ?> role="navigation">
       <div class="container-fluid mx-0">
 
         <!-- Brand and toggle get grouped for better mobile display -->
