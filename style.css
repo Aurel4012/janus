@@ -313,3 +313,86 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     border-radius: 5px !important;
   }
 }
+.menu{
+	list-style: none;
+	text-align: center;
+	padding-inline-start: 0px;
+}
+/* step theme*/
+.step-block .inner-box .icon-outer .service-number {
+    position: absolute;
+    left: -45px;
+    top: -20px;
+    line-height: 1em;
+    color: #e3ecf6;
+    font-size: 100px;
+    font-weight: 700;
+    text-align: center;
+    background-color: #e3ecf6;
+    color: transparent;
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.2);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+.step-block {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+}
+.step-block .inner-box:hover .icon-outer .service-number{
+	color:#06a9ed;
+}
+.step-block .inner-box .icon-outer {
+    position: relative;
+    display: inline-block;
+}
+.step-block .inner-box .icon-outer .icon-box {
+    position: relative;
+    width: 135px;
+    height: 135px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 138px;
+    font-size: 62px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.30);
+    background-color: #1700a0;
+}
+.step-block .inner-box .icon-outer .icon-box {
+    position: relative;
+    width: 135px;
+    height: 135px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 138px;
+    font-size: 62px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.30);
+    background-color: #1700a0;
+}
+.step-block .inner-box .lower-box {
+    position: relative;
+    margin-top: 30px;
+}
+
+.steps-section-two .outer-container .step-block:nth-child(2), .steps-section-two .outer-container .step-block:nth-child(4) {
+    margin-top: 65px;
+}
+.outer-container {
+    position: absolute;
+    content: '';
+    left: 0px;
+    top: 80px;
+    width: 100%;
+    /*height: 91px;*/
+    background: url(../janus/images/pattern-1.png) center top no-repeat;
+}
+.steps-section-two .outer-container {
+    position: relative;
+}

@@ -377,7 +377,7 @@ function get_current_user_infos() {
           register_sidebar(array(
         'name' => __('Footer Column 1', 'janus'),
         'id' => 'footer_1',
-        'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
+        'before_widget' => '<div class="footer-widget col my-auto text-center"><aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside></div>',
         'before_title' => '<h3>',
         'after_title' => '</h3>',
@@ -387,7 +387,17 @@ function get_current_user_infos() {
           register_sidebar(array(
         'name' => __('Footer Column 2', 'janus'),
         'id' => 'footer_2',
-        'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
+        'before_widget' => '<div id="%1$s" class="widget footer-widget %2$s col">',
+        'after_widget'  => '</div>',
+        'before_title' => '<h4 class="text-center">',
+        'after_title' => '</h4>',
+          )
+        );
+      if ( function_exists('register_sidebar') )
+          register_sidebar(array(
+        'name' => __('Footer Column 3', 'janus'),
+        'id' => 'footer_3',
+        'before_widget' => '<div class="footer-widget col"><aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside></div>',
         'before_title' => '<h3>',
         'after_title' => '</h3>',
@@ -395,9 +405,29 @@ function get_current_user_infos() {
         );
       if ( function_exists('register_sidebar') )
           register_sidebar(array(
-        'name' => __('Footer Column 3', 'janus'),
-        'id' => 'footer_3',
-        'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
+        'name' => __('Footer Column 4', 'janus'),
+        'id' => 'footer_4',
+        'before_widget' => '<div class="footer-widget col"><aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside></div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+          )
+        );
+      if ( function_exists('register_sidebar') )
+          register_sidebar(array(
+        'name' => __('Footer Column 5', 'janus'),
+        'id' => 'footer_5',
+        'before_widget' => '<div class="footer-widget col"><aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside></div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+          )
+        );
+      if ( function_exists('register_sidebar') )
+          register_sidebar(array(
+        'name' => __('Footer Column 6', 'janus'),
+        'id' => 'footer_6',
+        'before_widget' => '<div class="footer-widget col"><aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside></div>',
         'before_title' => '<h3>',
         'after_title' => '</h3>',

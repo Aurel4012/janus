@@ -13,7 +13,20 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer mx-2">
+	<footer id="colophon" class="site-footer mx-2 mt-2">
+	
+		<div class="container-fluid p-2  rgba-white-strong rounded z-depth-1 justify-content-center">
+		 <div class="row">
+		 	<?php dynamic_sidebar( 'footer_1' ); ?>
+		 	<?php dynamic_sidebar( 'footer_2' ); ?>
+		 	<?php dynamic_sidebar( 'footer_3' ); ?>
+		 	<?php dynamic_sidebar( 'footer_4' ); ?>
+		 	<?php dynamic_sidebar( 'footer_5' ); ?>
+		 	<?php dynamic_sidebar( 'footer_6' ); ?>
+		 </div>
+
+		</div>
+	
 		<div class="site-info container-fluid my-2 p-2  rgba-white-strong rounded z-depth-1">
 			
 			  <?php
