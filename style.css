@@ -56,6 +56,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+ /* @import url('https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|3d-float');*/
  html {
    --scrollbarBG: rgba(0, 178, 255, 0.1);
    --thumbBG: #00b3ff;
@@ -244,9 +245,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .admin-menu{
  margin-top:32px;
 }
-
-.nav-menu{
- z-index:2 !important;
+.top_menu{
+  z-index:6;
+}
+.nav_menu{
+ z-index:1000 !important;
 }
   @media (max-width: 965px){
       .white_space {
@@ -265,7 +268,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
   
   .space_page {
-     margin-top: 100px;
+     margin-top: 112px;
   }
   @media (max-width: 965px){
       .space_page {
@@ -318,10 +321,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	text-align: center;
 	padding-inline-start: 0px;
 }
+.nav_menu {
+    z-index: 1;
+}
 /* step theme*/
 .step-block .inner-box .icon-outer .service-number {
     position: absolute;
-    left: -45px;
+    left: -70px;
     top: -20px;
     line-height: 1em;
     color: #e3ecf6;
@@ -374,7 +380,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     line-height: 138px;
     font-size: 62px;
     box-shadow: inset 0 0 20px rgba(0,0,0,0.30);
-    background-color: #1700a0;
+    background-color: #333333;
 }
 .step-block .inner-box .lower-box {
     position: relative;
@@ -396,3 +402,167 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .steps-section-two .outer-container {
     position: relative;
 }
+/*mobile open nav*/
+.nav_mobile_open{
+	width: 340px !important; 
+	transform: translateX(0px); 
+	position:relative !important; 
+	margin-left:0px !important;
+}
+
+body.offcanvas-active{
+	overflow:hidden;
+}
+
+.offcanvas-header{ display:none; }
+
+.screen-overlay {
+  width:0%;
+  height: 100%;
+  z-index: 30;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity:0;
+  visibility:hidden;
+  background-color: rgba(255, 249, 249, 0.93);
+  transition:opacity .2s linear, visibility .1s, width 1s ease-in;
+   }
+.screen-overlay.show {
+	transition: opacity .5s ease, width 0s;
+	opacity: 1;
+	width: 60%;
+	visibility: visible;
+	top: 50px;
+	border: 1px solid;
+}
+	
+@media all and (max-width:992px) { 
+	
+	.offcanvas-header{ display:block; }
+
+	.mobile-offcanvas{
+		visibility: hidden;
+		transform:translateX(-100%);
+	    border-radius:0; 
+		display:block;
+	    position: fixed;
+	    top: 0; left:0;
+	    height: 100%;
+	    z-index: 1200;
+	    width:80%;
+	    overflow-y: scroll;
+	    overflow-x: hidden;
+	    transition: visibility .2s ease-in-out, transform .2s ease-in-out;
+	}
+
+	.mobile-offcanvas.show{
+		visibility: visible;
+    	transform: translateX(0);
+	}
+}
+body {
+  background: #444;
+}
+/*https://codepen.io/b29/pen/jmNvJq*/
+.play-btn {
+  width: 100px;
+      height: 100px;
+      background: radial-gradient( rgba(0, 230, 255, 0.8) 60%, rgba(255, 255, 255, 1) );
+      border-radius: 50%;
+      position: relative;
+      display: block;
+      margin: 100px auto;
+      box-shadow: 0px 0px 25px 3px rgba(113, 106, 110, 0.8);
+}
+
+/* triangle */
+.play-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-40%) translateY(-50%);
+  transform: translateX(-40%) translateY(-50%);
+  transform-origin: center center;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 25px solid #fff;
+  z-index: 100;
+  -webkit-transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+/* pulse wave */
+.play-btn:before {
+  content: "";
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      -webkit-animation-delay: 0s;
+      animation-delay: 0s;
+      -webkit-animation: pulsate1 2s;
+      animation: pulsate1 2s;
+      -webkit-animation-direction: forwards;
+      animation-direction: forwards;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-timing-function: steps;
+      animation-timing-function: steps;
+      opacity: 1;
+      border-radius: 50%;
+      border: 5px solid rgba(255, 255, 255, .75);
+      top: -25%;
+      left: -25%;
+      background: rgba(198, 16, 0, 0);
+}
+
+@-webkit-keyframes pulsate1 {
+  0% {
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 1;
+    box-shadow: inset 0px 0px 25px 3px rgba(255, 255, 255, 0.75), 0px 0px 25px 10px rgba(255, 255, 255, 0.75);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+    box-shadow: none;
+
+  }
+}
+
+@keyframes pulsate1 {
+  0% {
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 1;
+    box-shadow: inset 0px 0px 25px 3px rgba(255, 255, 255, 0.75), 0px 0px 25px 10px rgba(255, 255, 255, 0.75);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1);
+    opacity: 0;
+    box-shadow: none;
+
+  }
+}*
+.rounded_more{
+    border-radius: 40px !important;
+}
+.font-effect-outline {
+  text-shadow:0 1px 1px #000, 0 -1px 1px #000, 1px 0 1px #000, -1px 0 1px #000;
+  color: #fff;
+}
+.font-effect-3d-float {
+  text-shadow: 0 0.032em 0 #b0b0b0, 0px 0.15em 0.11em rgba(0,0,0,0.15), 0px 0.25em 0.021em rgba(0,0,0,0.1), 0px 0.32em 0.32em rgba(0,0,0,0.1);
+  color: #fff;
+}
+/*ul#menu-top-menu-mobile {
+    width: 70%;
+    text-align: center;
+    padding-top: 20%;
+}*/
